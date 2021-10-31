@@ -18,7 +18,9 @@
     "url": "https://github.com/iusmanof/iusmanof-nodejs-2021q4/issues"
   },
   "homepage": "https://github.com/iusmanof/iusmanof-nodejs-2021q4#readme",
-  "dependencies": {},
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  },
   "devDependencies": {
     "prettier": "2.4.1"
   }
