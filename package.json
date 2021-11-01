@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index",
     "dev": "nodemon index.js",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "cipher": "node cipher-cli"
   },
   "repository": {
     "type": "git",

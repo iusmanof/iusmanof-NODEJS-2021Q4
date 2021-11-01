@@ -1,5 +1,5 @@
-const checkUpperCase = (l) => l === l.toUpperCase() ? true : false
+const checkUpperCase = (l) => (l === l.toUpperCase() ? true : false);
 
 module.exports = {
-  checkUpperCase
-}
+  checkUpperCase,
+};

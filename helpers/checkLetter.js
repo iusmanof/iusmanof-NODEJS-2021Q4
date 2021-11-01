@@ -1,5 +1,5 @@
-const checkLetter = (l) => l.match(/[^a-zA-Z]+$/) ? true : false
+const checkLetter = (l) => (l.match(/[^a-zA-Z]+$/) ? true : false);
 
 module.exports = {
-  checkLetter
-}
+  checkLetter,
+};
