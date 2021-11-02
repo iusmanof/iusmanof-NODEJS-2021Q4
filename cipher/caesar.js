@@ -1,7 +1,7 @@
 const { alphabet } = require("./alphabet");
 const { checkLetter } = require("../helpers/checkLetter");
 const { checkUpperCase } = require("../helpers/checkUpperCase");
-const shift = 3;
+const shift = 1;
 const decodedAlphabet = alphabet
   .slice(-shift)
   .concat(alphabet.slice(0, -shift));

@@ -1,6 +1,6 @@
 const { encodeCaeser, decodeCaeser } = require("../cipher/caesar");
 const { encodeAtbash, decodeAtbash } = require("../cipher/atbash");
-const { encodeROT13, decodeROT13 } = require("../cipher/rot13");
+const { encodeROT8, decodeROT8 } = require("../cipher/rot8");
 const { regExpDecodeEncode, indexOfOtionsParam } = require("./regExpHelper");
 let test = "Hello world";
 

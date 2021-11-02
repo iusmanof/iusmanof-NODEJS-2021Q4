@@ -1,6 +1,6 @@
 // const { encodeCaeser, decodeCaeser } = require("./cipher/caesar");
 // const { encodeAtbash, decodeAtbash } = require("./cipher/atbash");
-// const { encodeROT13, decodeROT13 } = require("./cipher/rot13");
+const { encodeROT8, decodeROT8 } = require("./cipher/rot8");
 
 // const dc = decodeCaeser('abc s s  sDOIHNQOUDH98h923hd9 23dh 9238d98*(**( *');
 // const ec = encodeCaeser('def idOOJ)#JD)@HF)f 0239f 02');
@@ -12,10 +12,10 @@
 // console.log(da)
 // console.log(ea)
 
-// const dr = decodeROT13("Hello world");
-// const er = encodeROT13("Uryyb jbeyq");
-// console.log(dr);
-// console.log(er);
+const dr = encodeROT8("ab c");
+const er = decodeROT8("Uryyb jbeyq");
+console.log(dr);
+console.log(er);
 
 // let param = "A-C0-C1-A"
 

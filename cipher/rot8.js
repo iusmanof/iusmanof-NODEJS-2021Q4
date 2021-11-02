@@ -1,11 +1,11 @@
 const { alphabet } = require("./alphabet");
-const decodedAlphabet = alphabet
-  .slice(-alphabet.length / 2)
-  .concat(alphabet.slice(0, alphabet.length / 2));
 const { checkLetter } = require("../helpers/checkLetter");
 const { checkUpperCase } = require("../helpers/checkUpperCase");
+const shift = 8
+const decodedAlphabet =  alphabet.slice(-shift).concat(alphabet)
 
-function decodeROT13(text) {
+function decodeROT8(text) {
+  console.log(decodedAlphabet)
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
     const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
@@ -17,7 +17,7 @@ function decodeROT13(text) {
   return decodeText.join("");
 }
 
-function encodeROT13(text) {
+function encodeROT8(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
     const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
@@ -30,6 +30,6 @@ function encodeROT13(text) {
 }
 
 module.exports = {
-  decodeROT13,
-  encodeROT13,
+  decodeROT8,
+  encodeROT8,
 };
