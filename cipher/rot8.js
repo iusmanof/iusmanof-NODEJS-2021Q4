@@ -5,7 +5,6 @@ const shift = 8
 const decodedAlphabet =  alphabet.slice(-shift).concat(alphabet)
 
 function decodeROT8(text) {
-  console.log(decodedAlphabet)
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
     const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
@@ -20,7 +19,7 @@ function decodeROT8(text) {
 function encodeROT8(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
-    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
+    const letterIndexAlphabet = alphabet.indexOf(letter.toLowerCase());
     const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];

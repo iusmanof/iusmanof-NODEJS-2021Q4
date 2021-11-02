@@ -3,19 +3,26 @@ const { checkOptionDublicate } = require("./helpers/checkOptionDublicate");
 const { checkOptionRequire } = require("./helpers/checkOptionRequire");
 const { checkOptionParams } = require("./helpers/regExpHelper");
 const { swithDecodeEncode } = require("./helpers/swithDecodeEncode");
+const fs = require("fs");
+
+const path = "./input.txt";
+
+
 
 if (checkOptionRequire && checkOptionDublicate(argv)) {
   if (checkOptionParams(argv)) {
-    // const path = "./input.txt";
+    
+    if (fs.existsSync(path)) {
+      console.log("exists:", path);
+      // stream
+      swithDecodeEncode(argv);
 
-    // if (fs.existsSync(path)) {
-    //   // path exists
-    //   console.log("exists:", path);
-    // } else {
-    //   console.log("DOES NOT exist:", path);
-    // }
-
-    swithDecodeEncode(argv);
+    } else {
+      console.log("DOES NOT exist:", path);
+      // input 
+    }
+    
+    
 
 
   } else {

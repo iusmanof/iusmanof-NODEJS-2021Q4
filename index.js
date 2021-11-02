@@ -80,19 +80,25 @@ const stream = require('stream')
 
 // readStream.pipe(writeStream);
 
-class decodeCaeserStream extends stream.Transform{
-  constructor(options){
+class transformDecodeEncode extends stream.Transform{
+  constructor(method, options){
     super(options)
+    this.method = method
   }
 
   _transform(chunk, encoding, callback){
-    this.push(decodeCaeser(chunk.toString()))
+    this.push(this.method(chunk.toString()))
     callback()
   }
 }
 
-const writeStream = fileSystem.createWriteStream("output.txt");
+function fsReadWriteStream(className, methodDecodeEncode) {
+  const writeStream = fileSystem.createWriteStream("output.txt");
 
-fileSystem.createReadStream("input.txt", 'utf8')
- .pipe(new decodeCaeserStream())
- .pipe(writeStream)
+  fileSystem.createReadStream("input.txt", 'utf8')
+   .pipe(new className(methodDecodeEncode))
+   .pipe(writeStream)
+  
+}
+
+fsReadWriteStream(transformDecodeEncode, decodeCaeser)
