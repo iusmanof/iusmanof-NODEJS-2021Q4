@@ -5,7 +5,7 @@ const { regExpDecodeEncode, indexOfOtionsParam } = require("./regExpHelper");
 let test = "Hello world";
 
 const swithDecodeEncode = (args) => {
-  const params = args[indexOfOtionsParam(arguments)].match(regExpDecodeEncode);
+  const params = args[indexOfOtionsParam(args)].match(regExpDecodeEncode);
 
   params.forEach((param) => {
     switch (param) {
@@ -28,12 +28,12 @@ const swithDecodeEncode = (args) => {
         break;
       case "R0":
         console.log("R0 decode");
-        test = decodeROT13(test);
+        test = decodeROT8(test);
         console.log(test);
         break;
       case "R1":
         console.log("R1 encode");
-        test = encodeROT13(test);
+        test = encodeROT8(test);
         console.log(test);
         break;
       default:

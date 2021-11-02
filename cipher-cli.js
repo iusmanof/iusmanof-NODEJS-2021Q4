@@ -6,10 +6,23 @@ const { swithDecodeEncode } = require("./helpers/swithDecodeEncode");
 
 if (checkOptionRequire && checkOptionDublicate(argv)) {
   if (checkOptionParams(argv)) {
+    // const path = "./input.txt";
+
+    // if (fs.existsSync(path)) {
+    //   // path exists
+    //   console.log("exists:", path);
+    // } else {
+    //   console.log("DOES NOT exist:", path);
+    // }
+
     swithDecodeEncode(argv);
+
+
+  } else {
+    stderr.write("Config must have param. For example -c C1-R0-A");
   }
 } else {
-  stderr.write("Config option is required");
+  stderr.write("Config option is required. Need -c/--config");
 }
 
 // 3. input check
