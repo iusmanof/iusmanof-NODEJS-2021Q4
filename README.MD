@@ -1,4 +1,3 @@
-:floppy_disk:
 ## Ciphering CLI Tool :floppy_disk:
 
 :paperclip: Options of cipher cli:
