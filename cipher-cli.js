@@ -11,11 +11,19 @@ const path = "./input.txt";
 
 if (checkOptionRequire && checkOptionDublicate(argv)) {
   if (checkOptionParams(argv)) {
+    const checkInputOption = argv.includes('-i')
+    const checkOutputOption = argv.includes('-o')
+    const checkInputParam = argv[argv.indexOf('-i') + 1]
+    const checkOutputParam = argv[argv.indexOf('-i') + 1]
+
+    const regExpFile = /^.*\.(txt)$/gm
+    let checkTXTformat = regExpFile.test(checkInputParam)
+    console.log(f)
     
-    if (fs.existsSync(path)) {
-      // console.log("exists:", path);
-      // stream
-      // console.log(argv)
+    if (fs.existsSync(path) && checkInputOption && checkOutputOption) {
+      console.log("exists:", path, '-i -0');
+     
+
       swithDecodeEncode(argv);
 
     } else {
