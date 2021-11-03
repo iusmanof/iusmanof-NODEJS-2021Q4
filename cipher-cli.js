@@ -13,8 +13,9 @@ if (checkOptionRequire && checkOptionDublicate(argv)) {
   if (checkOptionParams(argv)) {
     
     if (fs.existsSync(path)) {
-      console.log("exists:", path);
+      // console.log("exists:", path);
       // stream
+      // console.log(argv)
       swithDecodeEncode(argv);
 
     } else {

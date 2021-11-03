@@ -1,14 +1,15 @@
 const { encodeCaeser, decodeCaeser } = require("../cipher/caesar");
 const { encodeAtbash, decodeAtbash } = require("../cipher/atbash");
 const { encodeROT8, decodeROT8 } = require("../cipher/rot8");
-const { regExpDecodeEncode, indexOfOtionsParam } = require("./regExpHelper");
+const { regExpDecodeEncode, indexOfOtionsParam, configParam } = require("./regExpHelper");
 const { fsReadWriteStream } = require('../stream/fsReadWriteStream')
 const transformDecodeEncode = require('../stream/transformDecodeEncode')
 
 const swithDecodeEncode = (args) => {
-  const params = args[indexOfOtionsParam(args)].match(regExpDecodeEncode);
   let flagAtbashDecode = true
 
+  const params = configParam(args).split('-')
+  
   params.forEach((param) => {
     switch (param) {
       case "C0":
@@ -20,7 +21,6 @@ const swithDecodeEncode = (args) => {
       case "A":
         flagAtbashDecode ?  fsReadWriteStream(transformDecodeEncode, decodeAtbash) : fsReadWriteStream(transformDecodeEncode, encodeAtbash);
         flagAtbashDecode = !flagAtbashDecode;
-        console.log("flagA " + flagAtbashDecode)
         break;
       case "R0":
         fsReadWriteStream(transformDecodeEncode, decodeROT8)
