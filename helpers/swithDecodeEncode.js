@@ -5,8 +5,6 @@ const { regExpDecodeEncode, indexOfOtionsParam } = require("./regExpHelper");
 const { fsReadWriteStream } = require('../stream/fsReadWriteStream')
 const transformDecodeEncode = require('../stream/transformDecodeEncode')
 
-let test = "Hello world";
-
 const swithDecodeEncode = (args) => {
   const params = args[indexOfOtionsParam(args)].match(regExpDecodeEncode);
   let flagAtbashDecode = true
