@@ -9,6 +9,7 @@ let test = "Hello world";
 
 const swithDecodeEncode = (args) => {
   const params = args[indexOfOtionsParam(args)].match(regExpDecodeEncode);
+  let flagAtbashDecode = true
 
   params.forEach((param) => {
     switch (param) {
@@ -19,7 +20,9 @@ const swithDecodeEncode = (args) => {
         fsReadWriteStream(transformDecodeEncode, encodeCaeser)
         break;
       case "A":
-        fsReadWriteStream(transformDecodeEncode, decodeAtbash)
+        flagAtbashDecode ?  fsReadWriteStream(transformDecodeEncode, decodeAtbash) : fsReadWriteStream(transformDecodeEncode, encodeAtbash);
+        flagAtbashDecode = !flagAtbashDecode;
+        console.log("flagA " + flagAtbashDecode)
         break;
       case "R0":
         fsReadWriteStream(transformDecodeEncode, decodeROT8)
