@@ -9,7 +9,7 @@ const {
 const { fsReadWriteStream } = require("../stream/fsReadWriteStream");
 const transformDecodeEncode = require("../stream/transformDecodeEncode");
 
-const swithDecodeEncode = (args) => {
+const swithDecodeEncode = (pathInput, pathOutput, args) => {
   let flagAtbashDecode = true;
 
   const params = configParam(args).split("-");
@@ -17,22 +17,22 @@ const swithDecodeEncode = (args) => {
   params.forEach((param) => {
     switch (param) {
       case "C0":
-        fsReadWriteStream(transformDecodeEncode, decodeCaeser);
+        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeCaeser);
         break;
       case "C1":
-        fsReadWriteStream(transformDecodeEncode, encodeCaeser);
+        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeCaeser);
         break;
       case "A":
         flagAtbashDecode
-          ? fsReadWriteStream(transformDecodeEncode, decodeAtbash)
-          : fsReadWriteStream(transformDecodeEncode, encodeAtbash);
+          ? fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeAtbash)
+          : fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeAtbash);
         flagAtbashDecode = !flagAtbashDecode;
         break;
       case "R0":
-        fsReadWriteStream(transformDecodeEncode, decodeROT8);
+        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeROT8);
         break;
       case "R1":
-        fsReadWriteStream(transformDecodeEncode, encodeROT8);
+        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeROT8);
         break;
       default:
         console.log("Error param decode/encode");

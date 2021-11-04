@@ -1,10 +1,10 @@
 const fileSystem = require("fs");
 
-function fsReadWriteStream(className, methodDecodeEncode) {
-  const writeStream = fileSystem.createWriteStream("output.txt");
+function fsReadWriteStream(pathInput, pathOutput, className, methodDecodeEncode) {
+  const writeStream = fileSystem.createWriteStream(pathOutput);
 
   fileSystem
-    .createReadStream("input.txt", "utf8")
+    .createReadStream(pathInput, "utf8")
     .pipe(new className(methodDecodeEncode))
     .pipe(writeStream);
 }

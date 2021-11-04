@@ -33,7 +33,7 @@ if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
   if (!checkTXTformat(pathOutput))
     return stderr.write(`${pathOutput} need txt format \n`);
 
-  swithDecodeEncode(argv);
+  swithDecodeEncode(pathInput, pathOutput, argv);
 } else {
   console.log("input output logic");
 }
