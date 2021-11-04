@@ -10,6 +10,7 @@
 3. -o, --output: a path to output file
 
 :warning: -c / --config is required option :warning:
+:warning: -i option require a parameter such as {name}.txt :warning:
 
 ### Start program using path:
 ```
