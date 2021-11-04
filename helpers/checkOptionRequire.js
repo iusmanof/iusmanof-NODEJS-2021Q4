@@ -1,6 +1,4 @@
-const checkOptionRequire = () =>
-  argv.includes("-c") || argv.includes("--config");
+const { optionC, optionConfig } = require("../global/constData");
 
-module.exports = {
-  checkOptionRequire,
-};
+module.exports.checkOptionRequire = (argv) =>
+  argv.includes(optionC) || argv.includes(optionConfig);

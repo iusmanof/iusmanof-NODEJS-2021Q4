@@ -1,8 +1,8 @@
 const { alphabet } = require("./alphabet");
 const { checkLetter } = require("../helpers/checkLetter");
 const { checkUpperCase } = require("../helpers/checkUpperCase");
-const shift = 8
-const decodedAlphabet =  alphabet.slice(-shift).concat(alphabet)
+const shift = 8;
+const decodedAlphabet = alphabet.slice(-shift).concat(alphabet);
 
 function decodeROT8(text) {
   const decodeText = Array.from(text).map((letter) => {

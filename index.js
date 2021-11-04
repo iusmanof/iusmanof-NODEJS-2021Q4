@@ -62,12 +62,10 @@ const { encodeCaeser, decodeCaeser } = require("./cipher/caesar");
 //     console.log('done compressing');
 //   });
 
-
 // https://www.section.io/engineering-education/how-to-use-streams-in-node.js/
 
-
 const fileSystem = require("fs");
-const stream = require('stream')
+const stream = require("stream");
 
 // const readStream = fileSystem.createReadStream("input.txt");
 // const writeStream = fileSystem.createWriteStream("output.txt");
@@ -80,25 +78,25 @@ const stream = require('stream')
 
 // readStream.pipe(writeStream);
 
-class transformDecodeEncode extends stream.Transform{
-  constructor(method, options){
-    super(options)
-    this.method = method
+class transformDecodeEncode extends stream.Transform {
+  constructor(method, options) {
+    super(options);
+    this.method = method;
   }
 
-  _transform(chunk, encoding, callback){
-    this.push(this.method(chunk.toString()))
-    callback()
+  _transform(chunk, encoding, callback) {
+    this.push(this.method(chunk.toString()));
+    callback();
   }
 }
 
 function fsReadWriteStream(className, methodDecodeEncode) {
   const writeStream = fileSystem.createWriteStream("output.txt");
 
-  fileSystem.createReadStream("input.txt", 'utf8')
-   .pipe(new className(methodDecodeEncode))
-   .pipe(writeStream)
-  
+  fileSystem
+    .createReadStream("input.txt", "utf8")
+    .pipe(new className(methodDecodeEncode))
+    .pipe(writeStream);
 }
 
-fsReadWriteStream(transformDecodeEncode, decodeCaeser)
+fsReadWriteStream(transformDecodeEncode, decodeCaeser);

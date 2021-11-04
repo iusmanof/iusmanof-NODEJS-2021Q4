@@ -2,48 +2,38 @@ const { argv, stderr } = require("process");
 const { checkOptionDublicate } = require("./helpers/checkOptionDublicate");
 const { checkOptionRequire } = require("./helpers/checkOptionRequire");
 const { checkOptionParams } = require("./helpers/regExpHelper");
+const { checkFileExsist } = require("./helpers/checkFileExsist");
 const { swithDecodeEncode } = require("./helpers/swithDecodeEncode");
-const fs = require("fs");
+const { checkOption } = require("./helpers/checkOption");
+const { getOptionParam } = require("./helpers/getOptionParam");
+const { checkTXTformat } = require("./helpers/checkTXTformat");
+const { optionInput, optionOutput } = require("./global/constData");
 
-const path = "./input.txt";
+let pathInput = "";
+let pathOutput = "";
 
+if (!checkOptionRequire(argv))
+  return stderr.write(`-c or --config required option \n`);
+if (!checkOptionDublicate(argv))
+  return stderr.write(`-c or --config dublicated ! Write one param \n`);
+if (!checkOptionParams(argv))
+  return stderr.write(
+    `-c or --config must had param! Write some param 'C1-C0' \n`
+  );
 
+if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
+  pathInput = getOptionParam(argv, optionInput);
+  pathOutput = getOptionParam(argv, optionOutput);
+  if (!checkFileExsist(pathInput))
+    return stderr.write(`${pathInput} file not exist \n`);
+  if (!checkFileExsist(pathOutput))
+    return stderr.write(`${pathOutput} file not exist \n`);
+  if (!checkTXTformat(pathInput))
+    return stderr.write(`${pathInput} need txt format \n`);
+  if (!checkTXTformat(pathOutput))
+    return stderr.write(`${pathOutput} need txt format \n`);
 
-if (checkOptionRequire && checkOptionDublicate(argv)) {
-  if (checkOptionParams(argv)) {
-    const checkInputOption = argv.includes('-i')
-    const checkOutputOption = argv.includes('-o')
-    const checkInputParam = argv[argv.indexOf('-i') + 1]
-    const checkOutputParam = argv[argv.indexOf('-i') + 1]
-
-    const regExpFile = /^.*\.(txt)$/gm
-    let checkTXTformat = regExpFile.test(checkInputParam)
-    console.log(f)
-    
-    if (fs.existsSync(path) && checkInputOption && checkOutputOption) {
-      console.log("exists:", path, '-i -0');
-     
-
-      swithDecodeEncode(argv);
-
-    } else {
-      console.log("DOES NOT exist:", path);
-      // input 
-    }
-    
-    
-
-
-  } else {
-    stderr.write("Config must have param. For example -c C1-R0-A");
-  }
+  swithDecodeEncode(argv);
 } else {
-  stderr.write("Config option is required. Need -c/--config");
+  console.log("input output logic");
 }
-
-// 3. input check
-// 4. input stream write
-// 5. output check
-// 6. iuutput stream write
-// 7. transform stream 4.- 6.
-// 8. pipe / pipeline

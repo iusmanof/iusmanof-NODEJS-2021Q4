@@ -6,28 +6,27 @@ let regExpDecodeEncode = /([A])|([CR][01])/gm;
 let checkOptionParams = (args) =>
   args.some((e) => regexpOptionParams.test(e) || regExpDecodeEncode.test(e));
 
-const indexOfOtionsParam = (args) =>{
+const indexOfOtionsParam = (args) => {
   args.reduce((a, c, i) => {
     if (checkOptionParams) return i;
   });
-}
-  
+};
+
 const configParam = (args) => {
   let result;
   args.reduce((a, c) => {
     let regExp = /([A])|([CR][01])/gm;
     let flag = regExp.test(c);
-    if (flag){
-      result = c
-     }
+    if (flag) {
+      result = c;
+    }
   });
-  return result
-}
-
+  return result;
+};
 
 module.exports = {
   checkOptionParams,
   indexOfOtionsParam,
   regExpDecodeEncode,
-  configParam
+  configParam,
 };
