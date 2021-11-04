@@ -8,7 +8,7 @@ const { checkOption } = require("./helpers/checkOption");
 const { getOptionParam } = require("./helpers/getOptionParam");
 const { checkTXTformat } = require("./helpers/checkTXTformat");
 const { optionInput, optionOutput } = require("./global/constData");
-
+const { pipeStdinStdout } = require("./helpers/pipeStdinStdout");
 let pathInput = "";
 let pathOutput = "";
 
@@ -35,5 +35,5 @@ if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
 
   swithDecodeEncode(pathInput, pathOutput, argv);
 } else {
-  console.log("input output logic");
+  pipeStdinStdout(argv);
 }

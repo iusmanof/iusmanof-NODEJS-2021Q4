@@ -1,7 +1,5 @@
 let regexpOptionParams = /^([CR][01]|[A])(-[CR][01]|[A]-)(-([CR][01]|[A]))*$/gm;
 let regExpDecodeEncode = /([A])|([CR][01])/gm;
-// let resultA = param.match(/[C|R][0|1]/gm)
-// let resultCR = param.match(/[A]/gm)
 
 let checkOptionParams = (args) =>
   args.some((e) => regexpOptionParams.test(e) || regExpDecodeEncode.test(e));

@@ -6,7 +6,10 @@ function fsReadWriteStream(
   className,
   methodDecodeEncode
 ) {
-  const writeStream = fileSystem.createWriteStream(pathOutput, {flags: 'a+', encoding: 'utf8'});
+  const writeStream = fileSystem.createWriteStream(pathOutput, {
+    flags: "a+",
+    encoding: "utf8",
+  });
 
   fileSystem
     .createReadStream(pathInput, "utf8")
