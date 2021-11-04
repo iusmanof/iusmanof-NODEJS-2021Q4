@@ -13,7 +13,7 @@ class transformDecodeEncode extends stream.Transform {
       decodedEncodedText = func(decodedEncodedText);
     });
 
-    this.push(decodedEncodedText);
+    this.push(decodedEncodedText + '\n');
     callback();
   }
 }
