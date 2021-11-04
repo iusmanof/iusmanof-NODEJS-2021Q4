@@ -2,12 +2,15 @@ const { alphabet } = require("./alphabet");
 const { checkLetter } = require("../helpers/checkLetter");
 const { checkUpperCase } = require("../helpers/checkUpperCase");
 const shift = 8;
-const decodedAlphabet = alphabet.slice(-shift).concat(alphabet);
+const decodedAlphabet = alphabet
+  .slice(-shift)
+  .concat(alphabet.slice(0, -shift));
+const encodedAlphabet = alphabet.slice(shift).concat(alphabet.slice(-0, shift));
 
 function decodeROT8(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
-    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
+    const letterIndexAlphabet = encodedAlphabet.indexOf(letter.toLowerCase());
     const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];
@@ -19,7 +22,7 @@ function decodeROT8(text) {
 function encodeROT8(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
-    const letterIndexAlphabet = alphabet.indexOf(letter.toLowerCase());
+    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
     const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];

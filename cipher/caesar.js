@@ -7,7 +7,7 @@ const decodedAlphabet = alphabet
   .concat(alphabet.slice(0, -shift));
 const encodedAlphabet = alphabet.slice(shift).concat(alphabet.slice(-0, shift));
 
-function decodeCaeser(text) {
+function encodeCaeser(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
     const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
@@ -19,7 +19,7 @@ function decodeCaeser(text) {
   return decodeText.join("");
 }
 
-function encodeCaeser(text) {
+function decodeCaeser(text) {
   const decodeText = Array.from(text).map((letter) => {
     if (checkLetter(letter)) return letter;
     const letterIndexAlphabet = encodedAlphabet.indexOf(letter.toLowerCase());

@@ -11,33 +11,41 @@ const transformDecodeEncode = require("../stream/transformDecodeEncode");
 
 const swithDecodeEncode = (pathInput, pathOutput, args) => {
   let flagAtbashDecode = true;
+  let arrayDecodeEncode = [];
 
   const params = configParam(args).split("-");
 
   params.forEach((param) => {
     switch (param) {
       case "C0":
-        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeCaeser);
+        arrayDecodeEncode.push(decodeCaeser);
         break;
       case "C1":
-        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeCaeser);
+        arrayDecodeEncode.push(encodeCaeser);
         break;
       case "A":
         flagAtbashDecode
-          ? fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeAtbash)
-          : fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeAtbash);
+          ? arrayDecodeEncode.push(encodeAtbash)
+          : arrayDecodeEncode.push(decodeAtbash);
         flagAtbashDecode = !flagAtbashDecode;
         break;
       case "R0":
-        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, decodeROT8);
+        arrayDecodeEncode.push(decodeROT8);
         break;
       case "R1":
-        fsReadWriteStream(pathInput, pathOutput, transformDecodeEncode, encodeROT8);
+        arrayDecodeEncode.push(encodeROT8);
         break;
       default:
         console.log("Error param decode/encode");
     }
   });
+
+  fsReadWriteStream(
+    pathInput,
+    pathOutput,
+    transformDecodeEncode,
+    arrayDecodeEncode
+  );
 };
 
 module.exports = {

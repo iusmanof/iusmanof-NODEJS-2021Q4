@@ -1,6 +1,11 @@
 const fileSystem = require("fs");
 
-function fsReadWriteStream(pathInput, pathOutput, className, methodDecodeEncode) {
+function fsReadWriteStream(
+  pathInput,
+  pathOutput,
+  className,
+  methodDecodeEncode
+) {
   const writeStream = fileSystem.createWriteStream(pathOutput);
 
   fileSystem
