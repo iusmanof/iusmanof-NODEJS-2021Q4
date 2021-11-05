@@ -1,4 +1,4 @@
-const { MyReadFromFileStream } = require("./advanced/readble");
+const { MyReadFromFileStream } = require("./advanced/MyReadFromFileStream");
 const fileSystem = require("fs");
 
 const myReadFromFileStream = new MyReadFromFileStream("read.txt");

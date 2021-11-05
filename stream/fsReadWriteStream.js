@@ -1,4 +1,5 @@
 const fileSystem = require("fs");
+const { MyReadFromFileStream } = require("../advanced/MyReadFromFileStream");
 
 function fsReadWriteStream(
   pathInput,
@@ -11,10 +12,19 @@ function fsReadWriteStream(
     encoding: "utf8",
   });
 
-  fileSystem
-    .createReadStream(pathInput, "utf8")
+  // ----- 1 -----
+  // fileSystem
+  //   .createReadStream(pathInput, "utf8")
+  //   .pipe(new className(methodDecodeEncode))
+  //   .pipe(writeStream);
+  // ----- 1 -----
+
+  // ----- 2 -----
+  const myReadFromFileStream = new MyReadFromFileStream(pathInput);
+  myReadFromFileStream
     .pipe(new className(methodDecodeEncode))
     .pipe(writeStream);
+  // ----- 2 -----
 }
 
 module.exports = {

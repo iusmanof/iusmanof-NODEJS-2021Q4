@@ -11,7 +11,7 @@ class MyReadFromFileStream extends Readable {
 
   readSync() {
     try {
-      const data = fs.readFileSync(__dirname + `/${this.path}`, "utf8");
+      const data = fs.readFileSync(`${this.path}`, "utf8");
       this.data = data;
     } catch (err) {
       console.error(err);
