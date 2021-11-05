@@ -1,26 +1,33 @@
-const { Readable } = require('stream');
+const { Readable } = require("stream");
+const fs = require("fs");
 
-class myReadable extends Readable {
-  constructor(opt) {
-    super(opt);
-
-    this._max = 1000;
-    this._index = 0;
+class MyReadFromFileStream extends Readable {
+  constructor(path, options) {
+    super(options);
+    this.path = path;
+    this.data = "";
+    this.readSync();
   }
 
-  _read() {
-    this._index += 1;
-
-    if (this._index > this._max) {
-      this.push(null);
+  readSync() {
+    try {
+      const data = fs.readFileSync(__dirname + `/${this.path}`, "utf8");
+      this.data = data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  _read(size) {
+    if (this.data.length) {
+      const chunk = this.data.slice(0, size);
+      this.data = this.data.slice(size, this.data.length);
+      this.push(chunk);
     } else {
-      const buf = Buffer.from(`${this._index}`, 'utf8');
-
-      console.log(`Added: ${this._index}. Could be added? `, this.push(buf));
+      this.push(null);
     }
   }
 }
 
-module.exports = { 
-  myReadable
-}
+module.exports = {
+  MyReadFromFileStream,
+};

@@ -1,7 +1,10 @@
-const { myReadable } = require('./advanced/readble')
+const { MyReadFromFileStream } = require("./advanced/readble");
+const fileSystem = require("fs");
 
-const counter = new myReadable({ highWaterMark: 2 });
-
-counter.on('data', chunk => {
-  console.log(`Received: ${chunk.toString()}`);
+const myReadFromFileStream = new MyReadFromFileStream("read.txt");
+const writeStream = fileSystem.createWriteStream("./advanced/write.txt", {
+  flags: "a+",
+  encoding: "utf8",
 });
+
+myReadFromFileStream.pipe(writeStream);
