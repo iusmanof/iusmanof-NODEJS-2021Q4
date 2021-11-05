@@ -24,10 +24,16 @@ node cipher_cli -c C1-C1-R0-A -i input.txt -o output.txt
 node cipher_cli -c C1-C1-R0-A 
 ```
 
-For test 3 point
+For test 3 point :
 ```
 node cipher-cli -c C1-C1-R0-A -i input.txt -o output.txt
+```
+```
 node cipher-cli -c C1-C0-A-R1-R0-A-R0-R0-C1-A -i input.txt -o output.txt
+```
+```
 node cipher-cli -c A-A-A-R1-R0-R0-R0-C1-C1-A -i input.txt -o output.txt
+```
+```
 node cipher-cli -c C1-R1-C0-C0-A-R0-R1-R1-A-C1 -i input.txt -o output.txt
 ```
