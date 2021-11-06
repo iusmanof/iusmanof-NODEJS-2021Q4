@@ -28,6 +28,4 @@ class MyReadFromFileStream extends Readable {
   }
 }
 
-module.exports = {
-  MyReadFromFileStream,
-};
+module.exports = MyReadFromFileStream;

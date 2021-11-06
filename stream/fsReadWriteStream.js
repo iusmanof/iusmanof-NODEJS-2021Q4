@@ -1,5 +1,6 @@
 const fileSystem = require("fs");
-const { MyReadFromFileStream } = require("../advanced/MyReadFromFileStream");
+const MyReadFromFileStream = require("../advanced/MyReadFromFileStream");
+const MyWriteInFileStream = require('../advanced/MyWriteInFileStream');
 
 function fsReadWriteStream(
   pathInput,
@@ -21,9 +22,11 @@ function fsReadWriteStream(
 
   // ----- 2 -----
   const myReadFromFileStream = new MyReadFromFileStream(pathInput);
+  const myWriteInFileStream = new MyWriteInFileStream(pathOutput, {flags: "a+"});
+  
   myReadFromFileStream
     .pipe(new className(methodDecodeEncode))
-    .pipe(writeStream);
+    .pipe(myWriteInFileStream);
   // ----- 2 -----
 }
 

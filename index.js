@@ -1,5 +1,6 @@
 const { MyReadFromFileStream } = require("./advanced/MyReadFromFileStream");
 const fileSystem = require("fs");
+const MyWriteInFileStrem = require("./advanced/MyWriteInFileStrem");
 
 const myReadFromFileStream = new MyReadFromFileStream("read.txt");
 const writeStream = fileSystem.createWriteStream("./advanced/write.txt", {
@@ -7,4 +8,18 @@ const writeStream = fileSystem.createWriteStream("./advanced/write.txt", {
   encoding: "utf8",
 });
 
-myReadFromFileStream.pipe(writeStream);
+const myWriteInFileStrem = new MyWriteInFileStrem("write.txt", {
+  flags: "a+",
+})
+
+
+
+
+
+
+
+
+
+
+
+myReadFromFileStream.pipe(myWriteInFileStrem);
