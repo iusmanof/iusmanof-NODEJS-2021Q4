@@ -7,12 +7,17 @@ module.exports.checkOptionDublicate = (args) => {
       return a;
     }, 0);
 
-  if (countOption(optionConfig) === 1 && countOption(optionC) === 1) return;
+    console.log(countOption(optionC))
+    console.log(countOption(optionConfig))
   if (
     countOption(optionConfig) === 1 ||
     countOption(optionC) === 0 ||
     countOption(optionConfig) === 0 ||
-    countOption(optionC) === 1
-  )
-    return true;
+    countOption(optionC) === 1 ||
+    countOption(optionC) >= 2 ||
+    countOption(optionConfig) >= 2
+  ) {
+    return false;
+  }
+  if (countOption(optionConfig) === 1 && countOption(optionC) === 1) return true;
 };

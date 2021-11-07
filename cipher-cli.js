@@ -7,34 +7,65 @@ const { swithDecodeEncode } = require("./helpers/swithDecodeEncode");
 const { checkOption } = require("./helpers/checkOption");
 const { getOptionParam } = require("./helpers/getOptionParam");
 const { checkTXTformat } = require("./helpers/checkTXTformat");
-const { optionInput, optionOutput } = require("./global/constData");
+const { optionInput, optionOutput, optionC } = require("./global/constData");
 const { pipeStdinStdout } = require("./helpers/pipeStdinStdout");
+const RequiredError = require("./errors/RequiredError");
+const PropertyRequiredError = require("./errors/PropertyRequiredError");
+const DublicatedError = require("./errors/DublicatedError");
 let pathInput = "";
 let pathOutput = "";
 
-if (!checkOptionRequire(argv))
-  return stderr.write(`-c or --config required option \n`);
+function inputArguments(arguments){
+  if (!checkOptionRequire(arguments)) {
+    throw new RequiredError("Required option: -c or --config")
+  }
+
+  // if (!checkOptionDublicate(arguments)) {
+  //   throw new DublicatedError("Dublicated option: -c or --config. Write one param...")
+  // }
+
+  if (!checkOptionParams(arguments)) {
+    throw new PropertyRequiredError("-c or --config must had param. Write parameters to the property for example: C1-C0-A-R1-R0")
+  }
+  
+  
+}
+
+try{
+  inputArguments(argv)
+} catch (error) {
+  if (error instanceof RequiredError) {
+    console.log(error.message);
+  }
+
+  // if (error instanceof PropertyRequiredError) {
+  //   console.log("Property of options: " + error.message);
+  // }
+
+}
+// if (!checkOptionRequire(argv))
+//   return stderr.write(`-c or --config required option \n`);
 if (!checkOptionDublicate(argv))
   return stderr.write(`-c or --config dublicated ! Write one param \n`);
-if (!checkOptionParams(argv))
-  return stderr.write(
-    `-c or --config must had param! Write some param 'C1-C0' \n`
-  );
+// if (!checkOptionParams(argv))
+//   return stderr.write(
+//     `-c or --config must had param! Write some param 'C1-C0' \n`
+//   );
 
-if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
-  pathInput = getOptionParam(argv, optionInput);
-  pathOutput = getOptionParam(argv, optionOutput);
-  if (!checkFileExsist(pathInput))
-    return stderr.write(`${pathInput} file not exist \n`);
-  if (!checkFileExsist(pathOutput))
-    return stderr.write(`${pathOutput} file not exist \n`);
-  if (!checkTXTformat(pathInput))
-    return stderr.write(`${pathInput} need txt format \n`);
-  if (!checkTXTformat(pathOutput))
-    return stderr.write(`${pathOutput} need txt format \n`);
+// if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
+//   pathInput = getOptionParam(argv, optionInput);
+//   pathOutput = getOptionParam(argv, optionOutput);
+//   if (!checkFileExsist(pathInput))
+//     return stderr.write(`${pathInput} file not exist \n`);
+//   if (!checkFileExsist(pathOutput))
+//     return stderr.write(`${pathOutput} file not exist \n`);
+//   if (!checkTXTformat(pathInput))
+//     return stderr.write(`${pathInput} need txt format \n`);
+//   if (!checkTXTformat(pathOutput))
+//     return stderr.write(`${pathOutput} need txt format \n`);
 
-  swithDecodeEncode(pathInput, pathOutput, argv);
-} else {
-  console.log('One of the param of options -i or -o dont write. Use keyboard ... ')
-  pipeStdinStdout(argv);
-}
+//   swithDecodeEncode(pathInput, pathOutput, argv);
+// } else {
+//   console.log('One of the param of options -i or -o dont write. Use keyboard ... ')
+//   pipeStdinStdout(argv);
+// }
