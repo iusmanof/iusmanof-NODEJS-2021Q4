@@ -10,16 +10,6 @@ const writeStream = fileSystem.createWriteStream("./advanced/write.txt", {
 
 const myWriteInFileStrem = new MyWriteInFileStrem("write.txt", {
   flags: "a+",
-})
-
-
-
-
-
-
-
-
-
-
+});
 
 myReadFromFileStream.pipe(myWriteInFileStrem);

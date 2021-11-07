@@ -1,11 +1,9 @@
-const RequiredError = require("./RequiredError");
-
 class DublicatedError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = this.constructor.name
-    this.message = message;
+  constructor(property) {
+    super("Dublicated option: " + property);
+    this.name = this.constructor.name;
+    this.property = property;
   }
 }
 
-module.exports = DublicatedError
+module.exports = DublicatedError;

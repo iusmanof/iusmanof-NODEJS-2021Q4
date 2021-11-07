@@ -10,62 +10,65 @@ const { checkTXTformat } = require("./helpers/checkTXTformat");
 const { optionInput, optionOutput, optionC } = require("./global/constData");
 const { pipeStdinStdout } = require("./helpers/pipeStdinStdout");
 const RequiredError = require("./errors/RequiredError");
-const PropertyRequiredError = require("./errors/PropertyRequiredError");
+const PropertyError = require("./errors/PropertyError");
 const DublicatedError = require("./errors/DublicatedError");
+const FileOptionError = require("./errors/FileOptionError");
+const FileExistError = require("./errors/FileExistError");
 let pathInput = "";
 let pathOutput = "";
 
-function inputArguments(arguments){
+function inputArgumentsValidate(arguments){
   if (!checkOptionRequire(arguments)) {
     throw new RequiredError("Required option: -c or --config")
   }
 
-  // if (!checkOptionDublicate(arguments)) {
-  //   throw new DublicatedError("Dublicated option: -c or --config. Write one param...")
-  // }
+  if (!checkOptionDublicate(arguments)) {
+    throw new DublicatedError("-c or --config. Write one param...")
+  }
 
   if (!checkOptionParams(arguments)) {
-    throw new PropertyRequiredError("-c or --config must had param. Write parameters to the property for example: C1-C0-A-R1-R0")
+    throw new PropertyError("-c or --config must had param. Write parameters to the property for example: C1-C0-A-R1-R0")
   }
-  
-  
 }
+
+function checkFiles(arguments, inputPath, outputPath){
+  pathInput = getOptionParam(argv, optionInput);
+  pathOutput = getOptionParam(argv, optionOutput);
+  
+  if(!checkOption(argv, optionInput)) throw new FileOptionError(optionInput)
+  if(!checkOption(argv, optionOutput)) throw new FileOptionError(optionOutput)
+  if(!checkFileExsist(pathInput)) throw new FileExistError(pathInput)
+  if(!checkFileExsist(pathOutput)) throw new FileExistError(pathOutput)
+  if(!checkTXTformat(pathInput)) throw new FileExistError(pathInput)
+  if(!checkTXTformat(pathOutput)) throw new FileExistError(pathOutput)
+  return true
+}
+
 
 try{
-  inputArguments(argv)
+  inputArgumentsValidate(argv)
 } catch (error) {
-  if (error instanceof RequiredError) {
-    console.log(error.message);
+  if (error instanceof RequiredError) stderr.write(error.message + '\n');
+  if (error instanceof DublicatedError) stderr.write(error.message + '\n');
+  if (error instanceof PropertyError) stderr.write(error.message + '\n');
+}
+
+
+try {
+  checkFiles(argv, pathInput, pathOutput)
+  swithDecodeEncode(pathInput, pathOutput, argv)
+} catch (error) {
+  if (error instanceof FileOptionError){
+    stderr.write(error.message + '\n');
+  } {
+    pipeStdinStdout(argv);
   }
 
-  // if (error instanceof PropertyRequiredError) {
-  //   console.log("Property of options: " + error.message);
-  // }
+  if (error instanceof FileExistError){
+    stderr.write(error.message + '\n');
+  }
 
-}
-// if (!checkOptionRequire(argv))
-//   return stderr.write(`-c or --config required option \n`);
-if (!checkOptionDublicate(argv))
-  return stderr.write(`-c or --config dublicated ! Write one param \n`);
-// if (!checkOptionParams(argv))
-//   return stderr.write(
-//     `-c or --config must had param! Write some param 'C1-C0' \n`
-//   );
-
-// if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
-//   pathInput = getOptionParam(argv, optionInput);
-//   pathOutput = getOptionParam(argv, optionOutput);
-//   if (!checkFileExsist(pathInput))
-//     return stderr.write(`${pathInput} file not exist \n`);
-//   if (!checkFileExsist(pathOutput))
-//     return stderr.write(`${pathOutput} file not exist \n`);
-//   if (!checkTXTformat(pathInput))
-//     return stderr.write(`${pathInput} need txt format \n`);
-//   if (!checkTXTformat(pathOutput))
-//     return stderr.write(`${pathOutput} need txt format \n`);
-
-//   swithDecodeEncode(pathInput, pathOutput, argv);
-// } else {
-//   console.log('One of the param of options -i or -o dont write. Use keyboard ... ')
-//   pipeStdinStdout(argv);
-// }
+  if (error instanceof FileExistError){
+    stderr.write(error.message + '\n');
+  }
+} 

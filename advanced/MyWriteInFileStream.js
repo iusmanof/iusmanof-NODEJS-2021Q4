@@ -5,22 +5,22 @@ class MyWriteInFileStream extends Writable {
   constructor(path, options) {
     super(options);
     this.path = path;
-    this.temp = '';
+    this.temp = "";
     // this.flags = typeof options === undefined ? '' : options.flags
-    if(typeof options === 'undefined'){
-      this.flags = ''
+    if (typeof options === "undefined") {
+      this.flags = "";
     } else {
-      this.flags = options.flags
+      this.flags = options.flags;
     }
   }
 
   writeSync(data) {
-    fs.writeFile(`${this.path}`, data, err => {
+    fs.writeFile(`${this.path}`, data, (err) => {
       if (err) {
-        console.error(err)
-        return
+        console.error(err);
+        return;
       }
-    })
+    });
   }
 
   readSync() {
@@ -36,11 +36,11 @@ class MyWriteInFileStream extends Writable {
     let formattedChunk =
       this._writableState.objectMode === true ? JSON.stringify(chunk) : chunk;
 
-    if (this.flags === '' ) this.writeSync(formattedChunk)
-    if (this.flags === 'a+'){
-      this.readSync()
-      formattedChunk += `\n` + this.temp
-      this.writeSync(formattedChunk)
+    if (this.flags === "") this.writeSync(formattedChunk);
+    if (this.flags === "a+") {
+      this.readSync();
+      formattedChunk += `\n` + this.temp;
+      this.writeSync(formattedChunk);
     }
     callback();
   }
