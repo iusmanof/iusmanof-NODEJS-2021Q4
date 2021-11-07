@@ -1,6 +1,6 @@
 const { MyReadFromFileStream } = require("./advanced/MyReadFromFileStream");
 const fileSystem = require("fs");
-const MyWriteInFileStrem = require("./advanced/MyWriteInFileStrem");
+const MyWriteInFileStrem = require("./advanced/MyWriteInFileStream");
 
 const myReadFromFileStream = new MyReadFromFileStream("read.txt");
 const writeStream = fileSystem.createWriteStream("./advanced/write.txt", {

@@ -35,5 +35,6 @@ if (checkOption(argv, optionInput) && checkOption(argv, optionOutput)) {
 
   swithDecodeEncode(pathInput, pathOutput, argv);
 } else {
+  console.log('One of the param of options -i or -o dont write. Use keyboard ... ')
   pipeStdinStdout(argv);
 }
