@@ -8,7 +8,7 @@ function pipeStdinOutputFile(args, pathOutput) {
   const myWriteInFileStream = new MyWriteInFileStream(pathOutput, {
     flags: "a+",
   });
-  
+
   process.stdin
     .pipe(new transformDecodeEncode(arrayDecodeEncode))
     .pipe(myWriteInFileStream);

@@ -1,8 +1,8 @@
 class RequiredError extends Error {
-  constructor(message) {
-    super(message);
+  constructor() {
+    super();
     this.name = this.constructor.name;
-    this.message = `${message} .There is custom error was caused: ${this.name}`;
+    this.message = `"Required option: -c or --config" .There is custom error was caused: ${this.name}`;
   }
 }
 
