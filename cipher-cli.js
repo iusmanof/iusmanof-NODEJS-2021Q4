@@ -31,7 +31,7 @@ function inputArgumentsValidate(arguments){
   }
 
   if (!checkOptionParams(arguments)) {
-    throw new PropertyError("-c or --config must had param. Write parameters to the property for example: C1-C0-A-R1-R0")
+    throw new PropertyError("-c or --config must had param. Write parameters to the property for example: C1-C0-A-R1-R0 (PARAMETERS MUST BE UPPERCASE)")
   }
 }
 
@@ -39,49 +39,50 @@ function checkFiles(){
   pathInput = getOptionParam(argv, optionInput);
   pathOutput = getOptionParam(argv, optionOutput);
 
-  if(!checkOption(argv, optionOutput)) throw new FileOptionError(optionOutput)
+  if(!checkOption(argv, optionOutput) && !checkOption(argv, optionInput)) throw new FileOptionError()
+  if(!checkOption(argv,  optionOutput)) throw new FileOptionOutputError(optionOutput)
+
   if(!checkOption(argv, optionInput)) throw new FileOptionInputError(optionInput)
-  if(!checkOption(argv, optionInput)) throw new FileOptionOutputError(optionInput)
-  // if(!checkFileExsist(pathInput)) throw new FileExistError(pathInput)
-  // if(!checkFileExsist(pathOutput)) throw new FileExistError(pathOutput)
-  // if(!checkTXTformat(pathInput)) throw new FileExistError(pathInput)
-  // if(!checkTXTformat(pathOutput)) throw new FileExistError(pathOutput)
+  if(!checkFileExsist(pathInput)) throw new FileExistError(pathInput)
+  if(!checkFileExsist(pathOutput)) throw new FileExistError(pathOutput)
+  if(!checkTXTformat(pathInput)) throw new FileExistError(pathInput)
+  if(!checkTXTformat(pathOutput)) throw new FileExistError(pathOutput)
   return true
 }
 
-
-try{
+try {
   inputArgumentsValidate(argv)
+  checkFiles(argv, pathInput, pathOutput)
+  swithDecodeEncode(pathInput, pathOutput, argv)
 } catch (error) {
   if (error instanceof RequiredError) stderr.write(error.message + '\n');
   if (error instanceof DublicatedError) stderr.write(error.message + '\n');
   if (error instanceof PropertyError) stderr.write(error.message + '\n');
-}
 
-try {
-  checkFiles(argv, pathInput, pathOutput)
-  swithDecodeEncode(pathInput, pathOutput, argv)
-} catch (error) {
   if (error instanceof FileOptionError){
     stderr.write(error.message + '\n');
     pipeStdinStdout(argv);
   } 
+
+    
+  if (error instanceof FileExistError){
+    stderr.write(error.message + '\n');
+  }
+
+
+  if (error instanceof FileOptionOutputError){
+    stderr.write(error.message + '\n');
+    pipeInputFileStdout(argv, pathInput);
+  }
 
   if (error instanceof FileOptionInputError){
     stderr.write(error.message + '\n');
     pipeStdinOutputFile(argv, pathOutput);
   }
 
-  if (error instanceof FileOptionOutputError){
-    stderr.write(error.message + '\n');
-    pipeInputFileStdout(argv, pathInput);
-  }
-  
-  if (error instanceof FileExistError){
-    stderr.write(error.message + '\n');
-  }
-
-  if (error instanceof FileExistError){
-    stderr.write(error.message + '\n');
-  }
 } 
+
+
+
+// node cipher-cli -c C1-C1-R0-A -o output1111111.txt     check file exist
+// node cipher-cli -c C1-C1-R0-A -1 1.txt     check file exist
