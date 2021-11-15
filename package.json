@@ -1,0 +1,28 @@
+{
+  "name": "iusmanof-nodejs-2021q4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index.js",
+    "prettier": "npx prettier --write .",
+    "cipher": "node cipher-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iusmanof/iusmanof-nodejs-2021q4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iusmanof/iusmanof-nodejs-2021q4/issues"
+  },
+  "homepage": "https://github.com/iusmanof/iusmanof-nodejs-2021q4#readme",
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "devDependencies": {
+    "prettier": "2.4.1"
+  }
+}
