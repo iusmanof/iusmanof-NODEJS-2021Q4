@@ -4,12 +4,6 @@ let regExpDecodeEncode = /([A])|([CR][01])/gm;
 let checkOptionParams = (args) =>
   args.some((e) => regexpOptionParams.test(e) || regExpDecodeEncode.test(e));
 
-const indexOfOtionsParam = (args) => {
-  args.reduce((a, c, i) => {
-    if (checkOptionParams) return i;
-  });
-};
-
 const configParam = (args) => {
   let result;
   args.reduce((a, c) => {
@@ -24,7 +18,6 @@ const configParam = (args) => {
 
 module.exports = {
   checkOptionParams,
-  indexOfOtionsParam,
   regExpDecodeEncode,
   configParam,
 };

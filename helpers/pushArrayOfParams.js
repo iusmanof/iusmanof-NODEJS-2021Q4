@@ -6,7 +6,6 @@ const { encodeROT8, decodeROT8 } = require("../cipher/rot8");
 function pushArrayOfParams(args) {
   let flagAtbashDecode = true;
   let arrayDecodeEncode = [];
-
   const params = configParam(args).split("-");
 
   params.forEach((param) => {
@@ -29,8 +28,6 @@ function pushArrayOfParams(args) {
       case "R1":
         arrayDecodeEncode.push(encodeROT8);
         break;
-      default:
-        console.log("Error param decode/encode");
     }
   });
 
