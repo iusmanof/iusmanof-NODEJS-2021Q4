@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.31% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">29.41% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,36 +90,36 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,28 +128,28 @@ const { checkLetter } = require("../helpers/checkLetter");
 const { checkUpperCase } = require("../helpers/checkUpperCase");
 const decodedAlphabet = alphabet.slice().reverse();
 &nbsp;
-function <span class="fstat-no" title="function not covered" >encodeAtbash(</span>text) {
-  const decodeText = <span class="cstat-no" title="statement not covered" >Array.from(text).map(<span class="fstat-no" title="function not covered" >(l</span>etter) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (checkLetter(letter)) <span class="cstat-no" title="statement not covered" >return letter;</span></span>
-    const letterIndexAlphabet = <span class="cstat-no" title="statement not covered" >decodedAlphabet.indexOf(letter.toLowerCase());</span>
-    const decodeLetter = <span class="cstat-no" title="statement not covered" >checkUpperCase(letter)</span>
+function encodeAtbash(text) {
+  const decodeText = Array.from(text).map((letter) =&gt; {
+    if (checkLetter(letter)) return letter;
+    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
+    const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];
-<span class="cstat-no" title="statement not covered" >    return decodeLetter;</span>
+    return decodeLetter;
   });
-<span class="cstat-no" title="statement not covered" >  return decodeText.join("");</span>
+  return decodeText.join("");
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >decodeAtbash(</span>text) {
-  const decodeText = <span class="cstat-no" title="statement not covered" >Array.from(text).map(<span class="fstat-no" title="function not covered" >(l</span>etter) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (checkLetter(letter)) <span class="cstat-no" title="statement not covered" >return letter;</span></span>
-    const letterIndexAlphabet = <span class="cstat-no" title="statement not covered" >decodedAlphabet.indexOf(letter.toLowerCase());</span>
-    const decodeLetter = <span class="cstat-no" title="statement not covered" >checkUpperCase(letter)</span>
+function decodeAtbash(text) {
+  const decodeText = Array.from(text).map((letter) =&gt; {
+    if (checkLetter(letter)) return letter;
+    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
+    const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];
-<span class="cstat-no" title="statement not covered" >    return decodeLetter;</span>
+    return decodeLetter;
   });
-<span class="cstat-no" title="statement not covered" >  return decodeText.join("");</span>
+  return decodeText.join("");
 }
 &nbsp;
 module.exports = {
@@ -163,7 +163,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Nov 16 2021 22:09:41 GMT+0300 (Moscow Standard Time)
+                at Tue Nov 16 2021 22:42:13 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

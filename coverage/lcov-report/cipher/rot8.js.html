@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,40 +94,40 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,28 +140,28 @@ const decodedAlphabet = alphabet
   .concat(alphabet.slice(0, -shift));
 const encodedAlphabet = alphabet.slice(shift).concat(alphabet.slice(-0, shift));
 &nbsp;
-function <span class="fstat-no" title="function not covered" >decodeROT8(</span>text) {
-  const decodeText = <span class="cstat-no" title="statement not covered" >Array.from(text).map(<span class="fstat-no" title="function not covered" >(l</span>etter) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (checkLetter(letter)) <span class="cstat-no" title="statement not covered" >return letter;</span></span>
-    const letterIndexAlphabet = <span class="cstat-no" title="statement not covered" >encodedAlphabet.indexOf(letter.toLowerCase());</span>
-    const decodeLetter = <span class="cstat-no" title="statement not covered" >checkUpperCase(letter)</span>
+function decodeROT8(text) {
+  const decodeText = Array.from(text).map((letter) =&gt; {
+    if (checkLetter(letter)) return letter;
+    const letterIndexAlphabet = encodedAlphabet.indexOf(letter.toLowerCase());
+    const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];
-<span class="cstat-no" title="statement not covered" >    return decodeLetter;</span>
+    return decodeLetter;
   });
-<span class="cstat-no" title="statement not covered" >  return decodeText.join("");</span>
+  return decodeText.join("");
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >encodeROT8(</span>text) {
-  const decodeText = <span class="cstat-no" title="statement not covered" >Array.from(text).map(<span class="fstat-no" title="function not covered" >(l</span>etter) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (checkLetter(letter)) <span class="cstat-no" title="statement not covered" >return letter;</span></span>
-    const letterIndexAlphabet = <span class="cstat-no" title="statement not covered" >decodedAlphabet.indexOf(letter.toLowerCase());</span>
-    const decodeLetter = <span class="cstat-no" title="statement not covered" >checkUpperCase(letter)</span>
+function encodeROT8(text) {
+  const decodeText = Array.from(text).map((letter) =&gt; {
+    if (checkLetter(letter)) return letter;
+    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
+    const decodeLetter = checkUpperCase(letter)
       ? alphabet[letterIndexAlphabet].toUpperCase()
       : alphabet[letterIndexAlphabet];
-<span class="cstat-no" title="statement not covered" >    return decodeLetter;</span>
+    return decodeLetter;
   });
-<span class="cstat-no" title="statement not covered" >  return decodeText.join("");</span>
+  return decodeText.join("");
 }
 &nbsp;
 module.exports = {
@@ -175,7 +175,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Nov 16 2021 22:09:41 GMT+0300 (Moscow Standard Time)
+                at Tue Nov 16 2021 22:42:13 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

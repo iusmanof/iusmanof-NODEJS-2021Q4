@@ -1,37 +1,25 @@
-const { alphabet } = require("./alphabet");
-const { checkLetter } = require("../helpers/checkLetter");
-const { checkUpperCase } = require("../helpers/checkUpperCase");
-const shift = 8;
-const decodedAlphabet = alphabet
-  .slice(-shift)
-  .concat(alphabet.slice(0, -shift));
-const encodedAlphabet = alphabet.slice(shift).concat(alphabet.slice(-0, shift));
+const { decodeROT8, encodeROT8 } = require("./rot8");
 
-function decodeROT8(text) {
-  const decodeText = Array.from(text).map((letter) => {
-    if (checkLetter(letter)) return letter;
-    const letterIndexAlphabet = encodedAlphabet.indexOf(letter.toLowerCase());
-    const decodeLetter = checkUpperCase(letter)
-      ? alphabet[letterIndexAlphabet].toUpperCase()
-      : alphabet[letterIndexAlphabet];
-    return decodeLetter;
-  });
-  return decodeText.join("");
-}
+test('decodeROT8', () => {
+  expect(decodeROT8('abc')).toBe('stu')
+})
 
-function encodeROT8(text) {
-  const decodeText = Array.from(text).map((letter) => {
-    if (checkLetter(letter)) return letter;
-    const letterIndexAlphabet = decodedAlphabet.indexOf(letter.toLowerCase());
-    const decodeLetter = checkUpperCase(letter)
-      ? alphabet[letterIndexAlphabet].toUpperCase()
-      : alphabet[letterIndexAlphabet];
-    return decodeLetter;
-  });
-  return decodeText.join("");
-}
+test('encodeROT8', () => {
+  expect(encodeROT8('abc')).toBe('ijk')
+})
 
-module.exports = {
-  decodeROT8,
-  encodeROT8,
-};
+test('decodeROT8', () => {
+  expect(decodeROT8('132')).toBe('132')
+})
+
+test('encodeROT8', () => {
+  expect(encodeROT8('123')).toBe('123')
+})
+
+test('decodeROT8', () => {
+  expect(decodeROT8('ABC')).toBe('STU')
+})
+
+test('encodeROT8', () => {
+  expect(encodeROT8('ABC')).toBe('IJK')
+})

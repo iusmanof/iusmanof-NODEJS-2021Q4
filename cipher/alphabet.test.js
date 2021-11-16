@@ -1,32 +1,11 @@
-const alphabet = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+const {alphabet }  = require('./alphabet')
 
-module.exports = {
-  alphabet,
-};
+for (let i = 97; i < 123; i++){
+  test('alphabet', () => {
+    expect(alphabet[Math.abs(97- i)]).toBe(String.fromCharCode(i))
+  })
+}
+
+test('alphabet', () => {
+  expect(alphabet).toContain('b')
+})
