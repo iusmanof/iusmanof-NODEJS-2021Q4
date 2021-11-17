@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637091733196" clover="3.2.0">
-  <project timestamp="1637091733197" name="All files">
+<coverage generated="1637153723502" clover="3.2.0">
+  <project timestamp="1637153723502" name="All files">
     <metrics statements="124" coveredstatements="124" conditionals="57" coveredconditionals="57" methods="26" coveredmethods="26" elements="207" coveredelements="207" complexity="0" loc="124" ncloc="124" packages="3" files="13" classes="13"/>
     <package name="cipher">
       <metrics statements="57" coveredstatements="57" conditionals="24" coveredconditionals="24" methods="12" coveredmethods="12"/>
@@ -78,12 +78,12 @@
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="constData.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/global/constData.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
       </file>
     </package>
     <package name="helpers">
