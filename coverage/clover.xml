@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637153723502" clover="3.2.0">
-  <project timestamp="1637153723502" name="All files">
-    <metrics statements="124" coveredstatements="124" conditionals="57" coveredconditionals="57" methods="26" coveredmethods="26" elements="207" coveredelements="207" complexity="0" loc="124" ncloc="124" packages="3" files="13" classes="13"/>
+<coverage generated="1637220926949" clover="3.2.0">
+  <project timestamp="1637220926949" name="All files">
+    <metrics statements="156" coveredstatements="156" conditionals="57" coveredconditionals="57" methods="35" coveredmethods="35" elements="248" coveredelements="248" complexity="0" loc="156" ncloc="156" packages="4" files="22" classes="22"/>
     <package name="cipher">
       <metrics statements="57" coveredstatements="57" conditionals="24" coveredconditionals="24" methods="12" coveredmethods="12"/>
       <file name="alphabet.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/cipher/alphabet.js">
@@ -74,24 +74,86 @@
         <line num="34" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="errors">
+      <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="DublicatedError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/DublicatedError.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="FileExistError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/FileExistError.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="FileFormatError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/FileFormatError.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="FileOptionError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/FileOptionError.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="FileOptionInputError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/FileOptionInputError.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="FileOptionOutputError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/FileOptionOutputError.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="PropertyError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/PropertyError.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="RequiredError.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/errors/RequiredError.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="global">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="constData.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/global/constData.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
       </file>
     </package>
     <package name="helpers">
-      <metrics statements="61" coveredstatements="61" conditionals="33" coveredconditionals="33" methods="14" coveredmethods="14"/>
+      <metrics statements="62" coveredstatements="62" conditionals="33" coveredconditionals="33" methods="15" coveredmethods="15"/>
       <file name="checkLetter.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/helpers/checkLetter.js">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="57" type="cond" truecount="2" falsecount="0"/>
         <line num="3" count="5" type="stmt"/>
+      </file>
+      <file name="checkOption.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/helpers/checkOption.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
       <file name="checkOptionDublicate.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/helpers/checkOptionDublicate.js">
         <metrics statements="17" coveredstatements="17" conditionals="16" coveredconditionals="16" methods="3" coveredmethods="3"/>

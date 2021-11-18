@@ -1,4 +1,4 @@
-const { pushArrayOfParams } = require("./pushArrayOfParams");
+const { pushArrayOfParams } = require("../helpers/pushArrayOfParams");
 const { encodeCaeser, decodeCaeser } = require("../cipher/caesar");
 const { encodeAtbash, decodeAtbash } = require("../cipher/atbash");
 const { encodeROT8, decodeROT8 } = require("../cipher/rot8");

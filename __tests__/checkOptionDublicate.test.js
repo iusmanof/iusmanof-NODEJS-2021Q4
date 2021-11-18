@@ -1,4 +1,4 @@
-const { checkOptionDublicate } = require("./checkOptionDublicate");
+const { checkOptionDublicate } = require("../helpers/checkOptionDublicate");
 
 describe("Check Option Dublicate", () => {
   test("Test 1", () => {

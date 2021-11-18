@@ -1,7 +1,7 @@
-const optionC = require('./constData')
-const optionConfig = require('./constData')
-const optionInput = require('./constData')
-const optionOutput = require('./constData')
+const optionC = require('../global/constData')
+const optionConfig = require('../global/constData')
+const optionInput = require('../global/constData')
+const optionOutput = require('../global/constData')
 
 test('Test -c', () =>{
   expect(optionC.optionC).toBe('-c')

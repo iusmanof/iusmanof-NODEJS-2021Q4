@@ -1,4 +1,4 @@
-const { getOptionParam } = require("./getOptionParam");
+const { getOptionParam } = require("../helpers/getOptionParam");
 
 describe("Get Option of param", () => {
   test("Test -1", () => {

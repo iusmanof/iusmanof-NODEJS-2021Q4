@@ -1,4 +1,4 @@
-const { decodeCaeser, encodeCaeser } = require("./caesar");
+const { decodeCaeser, encodeCaeser } = require("../cipher/caesar");
 
 test('decodeCaeser', () => {
   expect(decodeCaeser('abc')).toBe('zab')

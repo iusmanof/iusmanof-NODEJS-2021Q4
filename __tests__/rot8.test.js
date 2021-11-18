@@ -1,4 +1,4 @@
-const { decodeROT8, encodeROT8 } = require("./rot8");
+const { decodeROT8, encodeROT8 } = require("../cipher/rot8");
 
 test('decodeROT8', () => {
   expect(decodeROT8('abc')).toBe('stu')

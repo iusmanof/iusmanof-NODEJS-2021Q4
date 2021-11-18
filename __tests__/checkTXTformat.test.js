@@ -1,4 +1,4 @@
-const { checkTXTformat } = require("./checkTXTformat");
+const { checkTXTformat } = require("../helpers/checkTXTformat");
 
 test("Check TXT format", () => {
   expect(checkTXTformat("input.txt")).toBeTruthy();

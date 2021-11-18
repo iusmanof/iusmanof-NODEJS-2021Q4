@@ -1,4 +1,4 @@
-const { checkLetter } = require("./checkLetter");
+const { checkLetter } = require("../helpers/checkLetter");
 
 describe("Check Letter", () => {
   test("Upper case test", () => {

@@ -1,4 +1,4 @@
-const { checkUpperCase } = require("./checkUpperCase");
+const { checkUpperCase } = require("../helpers/checkUpperCase");
 
 test("Check Upper Case", () => {
   expect(checkUpperCase("C1")).toBeTruthy();

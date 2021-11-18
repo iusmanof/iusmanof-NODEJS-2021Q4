@@ -1,4 +1,4 @@
-const { decodeAtbash, encodeAtbash } = require("./atbash");
+const { decodeAtbash, encodeAtbash } = require("../cipher/atbash");
 
 test('decodeAtbash', () => {
   expect(decodeAtbash('abc')).toBe('zyx')

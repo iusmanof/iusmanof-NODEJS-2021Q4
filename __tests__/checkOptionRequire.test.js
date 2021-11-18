@@ -1,4 +1,4 @@
-const { checkOptionRequire } = require("./checkOptionRequire");
+const { checkOptionRequire } = require("../helpers/checkOptionRequire");
 
 describe("Check Option Require", () => {
   test("should be true", () => {

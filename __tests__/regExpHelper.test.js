@@ -1,4 +1,4 @@
-const { checkOptionParams } = require("./regExpHelper");
+const { checkOptionParams } = require("../helpers/regExpHelper");
 
 describe('RegExp Helper functions', () => {
   test('Check Option Params 1', () => {
