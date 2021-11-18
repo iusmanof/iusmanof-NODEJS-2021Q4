@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637220926949" clover="3.2.0">
-  <project timestamp="1637220926949" name="All files">
-    <metrics statements="156" coveredstatements="156" conditionals="57" coveredconditionals="57" methods="35" coveredmethods="35" elements="248" coveredelements="248" complexity="0" loc="156" ncloc="156" packages="4" files="22" classes="22"/>
+<coverage generated="1637226752566" clover="3.2.0">
+  <project timestamp="1637226752566" name="All files">
+    <metrics statements="167" coveredstatements="163" conditionals="57" coveredconditionals="57" methods="38" coveredmethods="37" elements="262" coveredelements="257" complexity="0" loc="167" ncloc="167" packages="5" files="24" classes="24"/>
     <package name="cipher">
       <metrics statements="57" coveredstatements="57" conditionals="24" coveredconditionals="24" methods="12" coveredmethods="12"/>
       <file name="alphabet.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/cipher/alphabet.js">
@@ -132,6 +132,21 @@
         <line num="9" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="fs">
+      <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="asyncReadWriteFile.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/fs/asyncReadWriteFile.js">
+        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="global">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="constData.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/global/constData.js">
@@ -145,7 +160,12 @@
       </file>
     </package>
     <package name="helpers">
-      <metrics statements="62" coveredstatements="62" conditionals="33" coveredconditionals="33" methods="15" coveredmethods="15"/>
+      <metrics statements="64" coveredstatements="64" conditionals="33" coveredconditionals="33" methods="16" coveredmethods="16"/>
+      <file name="checkFileExsist.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/helpers/checkFileExsist.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
       <file name="checkLetter.js" path="/home/ubuntu/Templates/iusmanof-NODEJS-2021Q4/helpers/checkLetter.js">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="57" type="cond" truecount="2" falsecount="0"/>
