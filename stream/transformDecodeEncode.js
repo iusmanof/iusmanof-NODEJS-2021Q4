@@ -8,7 +8,6 @@ class transformDecodeEncode extends stream.Transform {
 
   _transform(chunk, encoding, callback) {
     let decodedEncodedText = chunk.toString();
-
     this.method.forEach(function (func) {
       decodedEncodedText = func(decodedEncodedText);
     });
