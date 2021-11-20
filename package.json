@@ -28,5 +28,16 @@
   },
   "devDependencies": {
     "prettier": "2.4.1"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "./advanced/*.js",
+      "./cipher/*.js",
+      "./errors/*.js",
+      "./global/*.js",
+      "./helpers/*.js",
+      "./stream/*.js"
+    ]
   }
 }

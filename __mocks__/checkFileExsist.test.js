@@ -1,9 +1,9 @@
-const { checkFileExsist } = require('../helpers/checkFileExsist')
+const { checkFileExsist } = require("../helpers/checkFileExsist");
 
-jest.mock('fs')
+jest.mock("fs");
 
-test('checkFileExsist', () => {
-  const fileName = 'input.txt'
+test("checkFileExsist", () => {
+  const fileName = "input.txt";
 
-  return checkFileExsist(fileName)
+  return checkFileExsist(fileName);
 });

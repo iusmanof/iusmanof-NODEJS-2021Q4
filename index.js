@@ -1,19 +1,9 @@
 const MyReadFromFileStream = require("./advanced/MyReadFromFileStream");
-const fs = require('fs')
+const fs = require("fs");
 
+const m = new MyReadFromFileStream("./input.txt");
 
-const m = new MyReadFromFileStream('./input.txt')
-
-
-
-m.pipe(fs.createWriteStream('output.txt'))
-
-
-
-
-
-
-
+m.pipe(fs.createWriteStream("output.txt"));
 
 // const fs = require('fs')
 // const { decodeAtbash } = require("./cipher/atbash");
