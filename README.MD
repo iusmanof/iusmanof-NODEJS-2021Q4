@@ -1,41 +1,16 @@
-## Ciphering CLI Tool :floppy_disk:
+## :hammer: Testing Ciphering CLI Tool :wrench:
 
-:paperclip: Options of cipher cli:
-
-1.    -c, --config: config for ciphers Config is a string with pattern {XY(-)}n, where:
-
-- X (C - Caesar cipher, A - Atbash cipher, R - ROT-8 cipher)
-- Y (1 - encode, 0 - decode)
-2. -i, --input: a path to input file
-3. -o, --output: a path to output file
-
-:warning: -c / --config is required option :warning:
-
-:warning: -i option require a parameter such as {name}.txt :warning:
-
-:warning: -0 option require a parameter such as {name}.txt :warning:
-
-### Start program using path:
+### :electric_plug: Test:
 ```
-node cipher_cli -c C1-C1-R0-A -i input.txt -o output.txt
+npm run test
 ```
 
-### Start program without using path:
-:warning: if input.txt file option is not specified cli tool makes it possible to enter from the keyboard :warning: 
+### :incoming_envelope: Test watch:
 ```
-node cipher_cli -c C1-C1-R0-A 
+npm run test-watch
 ```
 
-For test 3 point :
+### :notebook_with_decorative_cover: Test coverage :
 ```
-node cipher-cli -c C1-C1-R0-A -i input.txt -o output.txt
-```
-```
-node cipher-cli -c C1-C0-A-R1-R0-A-R0-R0-C1-A -i input.txt -o output.txt
-```
-```
-node cipher-cli -c A-A-A-R1-R0-R0-R0-C1-C1-A -i input.txt -o output.txt
-```
-```
-node cipher-cli -c C1-R1-C0-C0-A-R0-R1-R1-A-C1 -i input.txt -o output.txt
+npm run test-coverage
 ```
