@@ -6,7 +6,6 @@ class MyWriteInFileStream extends Writable {
     super(options);
     this.path = path;
     this.temp = "";
-    // this.flags = typeof options === undefined ? '' : options.flags
     if (typeof options === "undefined") {
       this.flags = "";
     } else {
